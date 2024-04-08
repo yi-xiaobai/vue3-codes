@@ -1,5 +1,7 @@
 import { createVNode, render } from 'vue'
 import BaseToast from '../components/BaseToast.vue'
+import BaseButton from '../components/BaseButton.vue'
+import BaseCard from '../components/BaseCard.vue'
 export default {
     install(app, options) {
         app.config.globalProperties.$toast = function (options) {
@@ -18,5 +20,10 @@ export default {
                 document.body.removeChild(div)
             }, duration)
         }
+
+        // 注册组件
+        app.component('BaseButton', BaseButton)
+        app.component('BaseCard', BaseCard)
     }
+
 }

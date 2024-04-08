@@ -26,8 +26,20 @@ const router = createRouter({
       path: '/grade',
       name: 'grade',
       component: () => import('../views/gradeView.vue')
+    },
+    {
+      path: '/slot',
+      name: 'slot',
+      meta: { name: "描述" },
+      component: () => import('../views/slotView.vue')
     }
   ]
+})
+
+
+router.beforeEach((to, from) => {
+  console.log('==>Get to', to);
+  console.log('==>Get from', from);
 })
 
 export default router
